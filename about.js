@@ -1,12 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var navbarUl = document.querySelector('nav');
-    var blurElement = document.querySelector('.blur');
+function sendMail() {
+    let parms = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        message : document.getElementById("message").value, 
+    }
 
-    navbarUl.addEventListener('mouseover', function() {
-        blurElement.style.opacity = '1';
-    });
-
-    navbarUl.addEventListener('mouseout', function() {
-        blurElement.style.opacity = '0';
-    });
-});
+    emailjs.send("service_kykm54j", "template_6nimcz1", parms).then(alert("Email Sent !!"))
+}
